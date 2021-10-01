@@ -12,6 +12,11 @@
                     <a href="{{ route('show.user', $user) }}" target="_blank">
                         {{ $user->name }}
                     </a>
+                    <div class="{{ $user->isAdmin() ? 'bg-primary' : 'bg-secondary' }} text-center">
+                        <a class="btn text-light rounded" href="{{ route('toggle', $user) }}" style="width: 100px !important;">
+                            {{ $user->isAdmin() ? 'Admin' : 'User' }}
+                        </a>
+                    </div>
                 </li>
             @endforeach
         </ul>

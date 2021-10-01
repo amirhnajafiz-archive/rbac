@@ -6,8 +6,11 @@ use App\Models\User;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Route;
 
 /**
  * Class UserController.
@@ -39,5 +42,22 @@ class UserController extends Controller
     {
         return view('web.profile')
             ->with('user', $user);
+    }
+
+    /**
+     * Is admin toggle changer.
+     *
+     * @param User $user user change
+     * @return RedirectResponse
+     */
+    public function toggle(User $user): RedirectResponse
+    {
+        $user->update([
+            'is_admin' => !$user->isAdmin()
+        ]);
+
+        $user->save();
+
+        return redirect()->route('all.user');
     }
 }

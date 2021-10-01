@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    $routes = \Illuminate\Support\Facades\Route::getRoutes()->getRoutes();
     return view('welcome');
 });
 
@@ -29,4 +30,8 @@ Route::get('/user/{user}', [\App\Http\Controllers\UserController::class, 'show']
     ->middleware(['auth', 'can:show.user,user'])
     ->name('show.user');
 
-require __DIR__.'/auth.php';
+Route::get('/toggle/{user}', [\App\Http\Controllers\UserController::class, 'toggle'])
+    ->middleware(['auth', 'can:all.user'])
+    ->name('toggle');
+
+require __DIR__ . '/auth.php';
