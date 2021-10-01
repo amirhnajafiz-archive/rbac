@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Gate;
 class UserController extends Controller
 {
     /**
-     * See users
+     * See users.
      *
      * @return Application|Factory|View
      */
@@ -27,5 +27,17 @@ class UserController extends Controller
 
         return view('web.all')
             ->with('users', User::paginate(5));
+    }
+
+    /**
+     * See single user.
+     *
+     * @param User $user user id
+     * @return Application|Factory|View
+     */
+    public function show(User $user)
+    {
+        return view('web.profile')
+            ->with('user', $user);
     }
 }

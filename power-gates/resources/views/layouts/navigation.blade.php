@@ -17,6 +17,12 @@
                     </x-nav-link>
                 </div>
 
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('show.user', \Illuminate\Support\Facades\Auth::user())" :active="request()->routeIs('show.user')">
+                        {{ __('Profile') }}
+                    </x-nav-link>
+                </div>
+
                 @can('all.user')
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                         <x-nav-link :href="route('all.user')" :active="request()->routeIs('all.user')">
