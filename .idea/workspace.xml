@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7847b5f0-8b46-49ba-a2c9-6fffbab8c840" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/power-gates/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/power-gates/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/power-gates/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/power-gates/app/Providers/AuthServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/power-gates/resources/views/layouts/navigation.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/power-gates/resources/views/layouts/navigation.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +155,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1633088925494</updated>
-      <workItem from="1633088934902" duration="1575000" />
+      <workItem from="1633088934902" duration="1947000" />
     </task>
     <servers />
   </component>
