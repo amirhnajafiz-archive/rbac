@@ -7,6 +7,7 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 /**
  * Class UserController.
@@ -22,6 +23,8 @@ class UserController extends Controller
      */
     public function index()
     {
+        Gate::authorize('all.user');
+
         return view('web.all')
             ->with('users', User::paginate(5));
     }
