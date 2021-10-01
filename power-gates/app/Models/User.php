@@ -9,6 +9,9 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Hash;
 use Laravel\Sanctum\HasApiTokens;
 
+/**
+ * @method static paginate(int $int)
+ */
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
