@@ -26,7 +26,7 @@ Route::get('/user', [\App\Http\Controllers\UserController::class, 'index'])
     ->name('all.user');
 
 Route::get('/user/{user}', [\App\Http\Controllers\UserController::class, 'show'])
-    ->middleware(['auth'])
+    ->middleware(['auth', 'can:show.user,user'])
     ->name('show.user');
 
 require __DIR__.'/auth.php';

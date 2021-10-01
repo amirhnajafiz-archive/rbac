@@ -29,5 +29,9 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('all.user', function (User $user) {
             return $user->isAdmin();
         });
+
+        Gate::define('show.user', function (User $user, User $view) {
+            return $user->isAdmin() || $user->id == $view->id;
+        });
     }
 }

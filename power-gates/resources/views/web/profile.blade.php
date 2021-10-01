@@ -6,16 +6,21 @@
     </x-slot>
 
     <div class="py-12 w-50 mx-auto">
-        <ul class="list-group">
-            <li class="list-group-item d-flex justify-content-between align-items-center my-2">
-                {{ 'Name: ' . $user->name }}
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center my-2">
-                {{ 'Email: ' . $user->email }}
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center my-2">
-                {{ 'Joined: ' . $user->created_at }}
-            </li>
-        </ul>
+        <div class="card">
+            <div class="card-header">
+                Your profile
+            </div>
+            <div class="card-body p-5">
+                <h5 class="card-title mb-5">
+                    {{ 'Name: ' . $user->name }}
+                </h5>
+                <p class="card-text mb-5">
+                    {{ 'Email: ' . $user->email }}
+                </p>
+                <span class="btn btn-primary">
+                    {{ 'Joined: ' . $user->created_at }}
+                </span>
+            </div>
+        </div>
     </div>
 </x-app-layout>

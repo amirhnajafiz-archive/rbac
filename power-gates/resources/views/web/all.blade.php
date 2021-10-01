@@ -9,7 +9,9 @@
         <ul class="list-group">
             @foreach($users as $user)
                 <li class="list-group-item d-flex justify-content-between align-items-center my-2">
-                    {{ $user->name }}
+                    <a href="{{ route('show.user', $user) }}" target="_blank">
+                        {{ $user->name }}
+                    </a>
                 </li>
             @endforeach
         </ul>
